@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScheduleSlot : MonoBehaviour, IDropHandler
+public class ScheduleSlot : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("UI References")]
     public Image periodImage; // Period 오브젝트의 Image 컴포넌트
@@ -21,16 +21,121 @@ public class ScheduleSlot : MonoBehaviour, IDropHandler
     public Vector2 subjectTargetSize = new Vector2(70, 48);
     public int subjectTargetFontSize = 40;
 
+    // 초기 상태 저장용 변수
+    private Sprite defaultSprite;
+    private Vector2 defaultLabelPos;
+    private Vector2 defaultLabelSize;
+    private int defaultLabelFontSize;
+    
+    private DraggableSubject assignedSubject; // 현재 할당된 과목
+    
+    [HideInInspector]
+    public DraggableSubject currentDraggingSubject; // 현재 이 슬롯에서 드래그 중인 과목 (다른 슬롯에서 참조용)
+
+    void Start()
+    {
+        // 초기 상태 저장
+        if (periodImage != null) defaultSprite = periodImage.sprite;
+        if (periodLabel != null)
+        {
+            defaultLabelPos = periodLabel.rectTransform.anchoredPosition;
+            defaultLabelSize = periodLabel.rectTransform.sizeDelta;
+            defaultLabelFontSize = periodLabel.fontSize;
+        }
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
             DraggableSubject droppedSubject = eventData.pointerDrag.GetComponent<DraggableSubject>();
+
+            // 만약 드래그 대상이 DraggableSubject가 아니라면(즉, 다른 슬롯에서 드래그 시작했다면)
+            if (droppedSubject == null)
+            {
+                ScheduleSlot sourceSlot = eventData.pointerDrag.GetComponent<ScheduleSlot>();
+                if (sourceSlot != null)
+                {
+                    droppedSubject = sourceSlot.currentDraggingSubject;
+                }
+            }
+
             if (droppedSubject != null)
             {
+                // 이미 할당된 과목이 있다면 먼저 제거(반환)
+                if (assignedSubject != null)
+                {
+                    ResetSlot();
+                }
+
+                assignedSubject = droppedSubject;
                 UpdateSlot(droppedSubject.subjectName);
                 droppedSubject.Consumed();
             }
+        }
+    }
+
+    // 드래그 시작: 할당된 과목이 있다면 "뽑아내는" 효과
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (assignedSubject != null)
+        {
+            currentDraggingSubject = assignedSubject;
+            
+            // 슬롯 초기화 (과목 버튼은 다시 활성화됨)
+            ResetSlot();
+
+            // 과목 버튼의 드래그 시작 로직 수동 호출
+            currentDraggingSubject.OnBeginDrag(eventData);
+            
+            // 마우스 위치로 즉시 이동시켜서 자연스럽게 이어지도록 함
+            currentDraggingSubject.SetPosition(eventData.position);
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (currentDraggingSubject != null)
+        {
+            currentDraggingSubject.OnDrag(eventData);
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (currentDraggingSubject != null)
+        {
+            currentDraggingSubject.OnEndDrag(eventData);
+            currentDraggingSubject = null;
+        }
+    }
+
+    void ResetSlot()
+    {
+        // 1. 과목 버튼 다시 활성화
+        if (assignedSubject != null)
+        {
+            assignedSubject.gameObject.SetActive(true);
+            assignedSubject = null;
+        }
+
+        // 2. 배경 이미지 복구
+        if (periodImage != null && defaultSprite != null)
+        {
+            periodImage.sprite = defaultSprite;
+        }
+
+        // 3. "1교시" 텍스트 복구
+        if (periodLabel != null)
+        {
+            StopAllCoroutines(); // 진행 중인 애니메이션 중지
+            StartCoroutine(AnimateText(periodLabel, defaultLabelPos, defaultLabelSize, defaultLabelFontSize));
+        }
+
+        // 4. SelectedSubject 비활성화
+        if (selectedSubjectText != null)
+        {
+            selectedSubjectText.gameObject.SetActive(false);
         }
     }
 
@@ -45,6 +150,7 @@ public class ScheduleSlot : MonoBehaviour, IDropHandler
         // 2. "1교시" 텍스트 애니메이션
         if (periodLabel != null)
         {
+            StopAllCoroutines();
             StartCoroutine(AnimateText(periodLabel, labelTargetPos, labelTargetSize, labelTargetFontSize));
         }
 

@@ -42,14 +42,23 @@ public class DraggableSubject : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
+        SetPosition(eventData.position);
+    }
+
+    public void SetPosition(Vector2 screenPos)
+    {
         if (canvas != null)
         {
-            // 캔버스 스케일에 맞춰 이동량 보정
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            Vector3 globalMousePos;
+            // 캔버스 평면 상의 월드 좌표로 변환
+            if (RectTransformUtility.ScreenPointToWorldPointInRectangle(canvas.transform as RectTransform, screenPos, canvas.worldCamera, out globalMousePos))
+            {
+                rectTransform.position = globalMousePos;
+            }
         }
         else
         {
-            transform.position = eventData.position;
+            transform.position = screenPos;
         }
     }
 
