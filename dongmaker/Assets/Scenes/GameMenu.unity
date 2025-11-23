@@ -535,6 +535,7 @@ MonoBehaviour:
   subjectTargetPos: {x: 8, y: -56}
   subjectTargetSize: {x: 262, y: 48}
   subjectTargetFontSize: 40
+  currentDraggingSubject: {fileID: 0}
 --- !u!1 &97541302
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +637,7 @@ GameObject:
   - component: {fileID: 111009620}
   - component: {fileID: 111009622}
   - component: {fileID: 111009621}
+  - component: {fileID: 111009623}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -700,6 +702,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111009619}
   m_CullTransparentMesh: 1
+--- !u!114 &111009623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111009619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e1279c3d0f8dc4ab739b3e5d70a0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMenuController: {fileID: 1519904246}
 --- !u!1 &116513001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1309,7 @@ MonoBehaviour:
   subjectTargetPos: {x: 8, y: -56}
   subjectTargetSize: {x: 262, y: 48}
   subjectTargetFontSize: 40
+  currentDraggingSubject: {fileID: 0}
 --- !u!1 &569502691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,6 +3299,7 @@ MonoBehaviour:
   subjectTargetPos: {x: 8, y: -56}
   subjectTargetSize: {x: 262, y: 48}
   subjectTargetFontSize: 40
+  currentDraggingSubject: {fileID: 0}
 --- !u!1 &1870074127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3634,7 @@ MonoBehaviour:
   subjectTargetPos: {x: 8, y: -56}
   subjectTargetSize: {x: 262, y: 48}
   subjectTargetFontSize: 40
+  currentDraggingSubject: {fileID: 0}
 --- !u!1 &2082609870
 GameObject:
   m_ObjectHideFlags: 0
