@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd2eb7396b1df346b8559ebe2571ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: 
   targetGraphic: {fileID: 0}
   hoverScale: {x: 1.1, y: 1.1, z: 1}
   clickScale: {x: 0.9, y: 0.9, z: 1}
@@ -544,6 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd2eb7396b1df346b8559ebe2571ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: 
   targetGraphic: {fileID: 0}
   hoverScale: {x: 1.1, y: 1.1, z: 1}
   clickScale: {x: 0.9, y: 0.9, z: 1}
@@ -642,6 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd2eb7396b1df346b8559ebe2571ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Intro
   targetGraphic: {fileID: 0}
   hoverScale: {x: 1.1, y: 1.1, z: 1}
   clickScale: {x: 0.9, y: 0.9, z: 1}
@@ -740,6 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd2eb7396b1df346b8559ebe2571ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: 
   targetGraphic: {fileID: 0}
   hoverScale: {x: 1.1, y: 1.1, z: 1}
   clickScale: {x: 0.9, y: 0.9, z: 1}

@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
+    [Header("Scene Management")]
+    public string sceneToLoad;
+
     [Header("Target Graphic (Optional)")]
     public Graphic targetGraphic;
 
@@ -71,6 +75,11 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             targetScale = Vector3.Scale(defaultScale, hoverScale);
             if (targetGraphic != null) targetColor = hoverColor;
+
+            if (!string.IsNullOrEmpty(sceneToLoad))
+            {
+                SceneManager.LoadScene(sceneToLoad);
+            }
         }
         else
         {
