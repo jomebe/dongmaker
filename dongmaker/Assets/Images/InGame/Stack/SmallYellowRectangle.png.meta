@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b790dd874d021914f956b3bcf9a5b2a3
+guid: f669e372829564345ab64a2aab2de25a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4469105728357409047
-    second: menubackground_0
+      213: 5624885114254970908
+    second: SmallYellowRectangle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menubackground_0
+      name: SmallYellowRectangle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 216
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eed795b40c8af1c0800000000000000
-      internalID: -4469105728357409047
+      spriteID: c10dc81a53b9f0e40800000000000000
+      internalID: 5624885114254970908
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menubackground_0: -4469105728357409047
+      SmallYellowRectangle_0: 5624885114254970908
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
