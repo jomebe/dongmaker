@@ -192,4 +192,13 @@ public class ScheduleSlot : MonoBehaviour, IDropHandler, IBeginDragHandler, IDra
         rect.sizeDelta = targetSize;
         target.fontSize = targetFontSize;
     }
+
+    public string GetAssignedSubjectName()
+    {
+        if (assignedSubject != null)
+        {
+            return assignedSubject.subjectName;
+        }
+        return null;
+    }
 }
