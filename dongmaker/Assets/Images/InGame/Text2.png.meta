@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 34dbe3f57b1a3d7438f6ba9f1a487352
+guid: 9f34af405e71df7499e4689f0ceeb4f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6026119411933494758
-    second: SelectButton_0
+      213: -5738161756558752870
+    second: Text2_0
+  - first:
+      213: 1206068901449417228
+    second: Text2_1
+  - first:
+      213: -8488786880383496379
+    second: Text2_2
+  - first:
+      213: -8175996532511621267
+    second: Text2_3
+  - first:
+      213: -945409927447480611
+    second: Text2_4
+  - first:
+      213: 2524454502049563488
+    second: Text2_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,12 +128,56 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectButton_0
+      name: Text2_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 26
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a938594d844fd50b0800000000000000
+      internalID: -5738161756558752870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text2_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 5
+        width: 35
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02c98d9641dcb010800000000000000
+      internalID: 1206068901449417228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text2_2
+      rect:
+        serializedVersion: 2
+        x: 97
         y: 0
-        width: 202
+        width: 29
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +187,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6edb16a6da311a350800000000000000
-      internalID: 6026119411933494758
+      spriteID: 54fcebcce45c13a80800000000000000
+      internalID: -8488786880383496379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text2_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 16
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fb1d2d876098e80800000000000000
+      internalID: -8175996532511621267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text2_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 26
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd67d531eaa31e2f0800000000000000
+      internalID: -945409927447480611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Text2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063cc469ef9a80320800000000000000
+      internalID: 2524454502049563488
       vertices: []
       indices: 
       edges: []
@@ -138,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +273,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SelectButton_0: 6026119411933494758
+      Text2_0: -5738161756558752870
+      Text2_1: 1206068901449417228
+      Text2_2: -8488786880383496379
+      Text2_3: -8175996532511621267
+      Text2_4: -945409927447480611
+      Text2_5: 2524454502049563488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ScheduleButton250_0: 465185699022860188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
