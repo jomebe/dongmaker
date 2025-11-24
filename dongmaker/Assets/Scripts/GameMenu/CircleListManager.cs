@@ -11,6 +11,9 @@ public class CircleListManager : MonoBehaviour
     public GameObject correctPanel;       // 정답 시 띄울 패널 (CorrectPanel)
     public GameObject incorrectPanel;     // 기회 소진 시 띄울 패널 (InCorrectPannel)
     
+    [Header("Game Mode Settings")]
+    public GameObject gameContent;        // 이 게임 모드의 최상위 오브젝트 (예: CircleListPannel)
+    
     private int currentChance = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +35,12 @@ public class CircleListManager : MonoBehaviour
     // 제출 버튼 클릭 시 호출할 함수
     public void OnSubmit()
     {
+        // 해당 게임 모드 오브젝트가 꺼져있으면 실행하지 않음
+        if (gameContent != null && !gameContent.activeInHierarchy)
+        {
+            return;
+        }
+
         if (currentChance <= 0)
         {
             Debug.Log("기회가 없습니다.");

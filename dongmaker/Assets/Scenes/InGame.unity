@@ -1752,6 +1752,7 @@ MonoBehaviour:
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
+  gameContent: {fileID: 1890261018}
 --- !u!4 &323436832
 Transform:
   m_ObjectHideFlags: 0
@@ -3725,6 +3726,7 @@ MonoBehaviour:
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
+  gameContent: {fileID: 1778886043}
 --- !u!4 &686433455
 Transform:
   m_ObjectHideFlags: 0
@@ -3966,6 +3968,7 @@ MonoBehaviour:
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
+  gameContent: {fileID: 140487316}
 --- !u!4 &723620824
 Transform:
   m_ObjectHideFlags: 0
