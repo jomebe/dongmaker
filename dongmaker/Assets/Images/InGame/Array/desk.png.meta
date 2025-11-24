@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e07f88b445f05a940b43f5ae6d0ba600
+guid: 0bb9ef37243101540a378195d03f9eaf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3502321935980069751
-    second: YellowRectangle_0
+      213: -3189526902326974661
+    second: "\uCC45\uC0C1_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: YellowRectangle_0
+      name: "\uCC45\uC0C1_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 85
-        height: 85
+        width: 209
+        height: 139
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7738623ae3fba9030800000000000000
-      internalID: 3502321935980069751
+      spriteID: b37af316e268cb3d0800000000000000
+      internalID: -3189526902326974661
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      YellowRectangle_0: 3502321935980069751
+      "\uCC45\uC0C1_0": -3189526902326974661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
