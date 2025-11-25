@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class ArrayGameController : MonoBehaviour
 {
     [Header("Game Settings")]
-    public float timeLimit = 60f;
-    public int maxChances = 3;
+    public GameObject gamePanel;          // 이 게임 모드의 패널
 
-    [Header("UI References")]
-    public Text startText;      // "시작!" 텍스트
-    public Text timerText;      // 타이머 텍스트
-    public Text resultText;     // 결과 메시지 (정답, 다시 시도, 실패)
-    public GameObject submitButton; // 제출 버튼
+    [Header("UI Settings")]
+    public TextMeshProUGUI chanceTextTMP; // TextMeshPro를 사용하는 경우 여기에 연결
+    public Text chanceTextLegacy;         // 일반 Text를 사용하는 경우 여기에 연결
+    public GameObject correctPanel;       // 정답 시 띄울 패널 (CorrectPanel)
+    public GameObject incorrectPanel;     // 기회 소진 시 띄울 패널 (InCorrectPannel)
 
     [Header("Game Objects")]
     public Transform desksParent; // Desks 부모 오브젝트를 여기에 연결하면 슬롯을 자동으로 찾습니다.
@@ -23,12 +23,18 @@ public class ArrayGameController : MonoBehaviour
     public string[] rowB_Answers = new string[5]; // B열 정답 (0~4)
     public string[] rowC_Answers = new string[5]; // C열 정답 (0~4)
 
-    private float currentTime;
-    private int currentChances;
-    private bool isGameActive = false;
+    private int currentChance = 3;
 
     void Start()
     {
+        Debug.Log($"ArrayGameController is attached to: {gameObject.name}");
+
+        UpdateChanceUI();
+        
+        // 시작할 때 패널들이 켜져있다면 끄기
+        if (correctPanel != null) correctPanel.SetActive(false);
+        if (incorrectPanel != null) incorrectPanel.SetActive(false);
+
         // Desks 부모가 연결되어 있고 deskSlots가 비어있다면 자동으로 자식에서 찾아서 할당
         if (desksParent != null && (deskSlots == null || deskSlots.Length == 0))
         {
@@ -48,75 +54,32 @@ public class ArrayGameController : MonoBehaviour
                 if (slotText) slotText.text = i.ToString();
             }
         }
-
-        StartCoroutine(GameRoutine());
-    }
-
-    IEnumerator GameRoutine()
-    {
-        // 초기화
-        currentChances = maxChances;
-        currentTime = timeLimit;
-        if(resultText) resultText.text = "";
-        if(submitButton) submitButton.SetActive(false);
-        if(timerText) timerText.text = "";
-
-        // 시작 텍스트 표시
-        if(startText)
-        {
-            startText.gameObject.SetActive(true);
-            startText.text = "시작!";
-            yield return new WaitForSeconds(2f);
-            startText.gameObject.SetActive(false);
-        }
-
-        // 게임 시작
-        isGameActive = true;
-        if(submitButton) submitButton.SetActive(true);
-    }
-
-    void Update()
-    {
-        if (isGameActive)
-        {
-            currentTime -= Time.deltaTime;
-            if (currentTime <= 0)
-            {
-                currentTime = 0;
-                GameOver(false);
-            }
-            UpdateTimerUI();
-        }
-    }
-
-    void UpdateTimerUI()
-    {
-        if (timerText)
-        {
-            timerText.text = $"남은 시간: {Mathf.Ceil(currentTime)}초";
-        }
     }
 
     // 제출 버튼에 연결할 함수
     public void OnSubmit()
     {
-        if (!isGameActive) return;
+        // 패널이 할당되어 있고, 현재 비활성화 상태라면 로직을 수행하지 않음
+        if (gamePanel != null && !gamePanel.activeInHierarchy)
+        {
+            return;
+        }
+
+        if (currentChance <= 0)
+        {
+            Debug.Log("기회가 없습니다.");
+            return;
+        }
 
         if (CheckAnswer())
         {
-            GameOver(true);
+            Debug.Log("정확함");
+            if (correctPanel != null) correctPanel.SetActive(true);
         }
         else
         {
-            currentChances--;
-            if (currentChances <= 0)
-            {
-                GameOver(false);
-            }
-            else
-            {
-                StartCoroutine(ShowMessage($"틀렸습니다! 남은 기회: {currentChances}", 1.5f));
-            }
+            Debug.Log("틀렸음");
+            DecreaseChance();
         }
     }
 
@@ -184,34 +147,27 @@ public class ArrayGameController : MonoBehaviour
         return true;
     }
 
-    void GameOver(bool isSuccess)
+    private void DecreaseChance()
     {
-        isGameActive = false;
-        if(submitButton) submitButton.SetActive(false);
-
-        if (isSuccess)
+        if (currentChance > 0)
         {
-            if(resultText) resultText.text = "정답!";
-            Debug.Log("게임 성공!");
-            // 성공 시 로직 (예: 스탯 상승, 씬 이동 등)
-        }
-        else
-        {
-            if(resultText) resultText.text = "실패...";
-            Debug.Log("게임 실패!");
-            // 실패 시 로직
+            currentChance--;
+            UpdateChanceUI();
+            
+            if (currentChance <= 0)
+            {
+                Debug.Log("기회를 모두 소진했습니다.");
+                if (incorrectPanel != null) incorrectPanel.SetActive(true);
+            }
         }
     }
 
-    IEnumerator ShowMessage(string message, float duration)
+    private void UpdateChanceUI()
     {
-        if(resultText)
-        {
-            resultText.gameObject.SetActive(true); // 텍스트 켜기
-            resultText.text = message;
-            yield return new WaitForSeconds(duration);
-            resultText.text = "";
-            resultText.gameObject.SetActive(false); // 텍스트 끄기
-        }
+        if (chanceTextTMP != null)
+            chanceTextTMP.text = currentChance.ToString();
+        
+        if (chanceTextLegacy != null)
+            chanceTextLegacy.text = currentChance.ToString();
     }
 }

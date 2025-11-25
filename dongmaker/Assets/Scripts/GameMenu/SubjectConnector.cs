@@ -38,6 +38,21 @@ public class SubjectConnector : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         }
         
         // Canvas 하위에 선을 그릴 컨테이너 생성
+        EnsureLineContainer();
+        
+        // CircleList 찾기
+        circleList = FindObjectOfType<CircleList>();
+        
+        if (string.IsNullOrEmpty(subjectName))
+        {
+            subjectName = gameObject.name;
+        }
+        
+        Debug.Log($"SubjectConnector 초기화: {subjectName}");
+    }
+
+    private void EnsureLineContainer()
+    {
         if (lineContainer == null)
         {
             Canvas canvas = GetComponentInParent<Canvas>();
@@ -80,16 +95,16 @@ public class SubjectConnector : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 Debug.Log("ConnectionLines 컨테이너 생성됨");
             }
         }
-        
-        // CircleList 찾기
-        circleList = FindObjectOfType<CircleList>();
-        
-        if (string.IsNullOrEmpty(subjectName))
+    }
+    
+    public static void ClearAllLines()
+    {
+        if (lineContainer != null)
         {
-            subjectName = gameObject.name;
+            Destroy(lineContainer);
+            lineContainer = null;
+            Debug.Log("모든 연결선이 제거되었습니다.");
         }
-        
-        Debug.Log($"SubjectConnector 초기화: {subjectName}");
     }
     
     public void OnBeginDrag(PointerEventData eventData)
