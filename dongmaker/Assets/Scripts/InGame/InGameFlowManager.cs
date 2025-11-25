@@ -49,6 +49,9 @@ public class InGameFlowManager : MonoBehaviour
             return;
         }
 
+        // 이전 게임의 연결선 제거
+        SubjectConnector.ClearAllLines();
+
         currentPeriodIndex = index;
         string subject = schedule[index];
         if (string.IsNullOrEmpty(subject)) subject = "Empty";
