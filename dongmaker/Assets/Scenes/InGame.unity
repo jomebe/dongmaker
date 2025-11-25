@@ -1998,11 +1998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d719762b193e4d4d9e3a1adde09785e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePanel: {fileID: 0}
   chanceTextTMP: {fileID: 0}
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
-  gameContent: {fileID: 1890261018}
 --- !u!4 &323436832
 Transform:
   m_ObjectHideFlags: 0
@@ -4179,11 +4179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d719762b193e4d4d9e3a1adde09785e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePanel: {fileID: 0}
   chanceTextTMP: {fileID: 0}
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
-  gameContent: {fileID: 1778886043}
 --- !u!4 &686433455
 Transform:
   m_ObjectHideFlags: 0
@@ -4421,11 +4421,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f192e78cea7aec44bad91f710613708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePanel: {fileID: 0}
   chanceTextTMP: {fileID: 0}
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
-  gameContent: {fileID: 140487316}
 --- !u!4 &723620824
 Transform:
   m_ObjectHideFlags: 0
@@ -11073,7 +11073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1778886044
 RectTransform:
   m_ObjectHideFlags: 0
