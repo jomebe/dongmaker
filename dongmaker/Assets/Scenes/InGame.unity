@@ -848,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &140487317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,6 @@ GameObject:
   - component: {fileID: 263558555}
   - component: {fileID: 263558558}
   - component: {fileID: 263558557}
-  - component: {fileID: 263558559}
   m_Layer: 5
   m_Name: YellowRectangle
   m_TagString: Untagged
@@ -1288,21 +1287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263558554}
   m_CullTransparentMesh: 1
---- !u!114 &263558559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263558554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subjectName: "\uB178"
-  lineWidth: 5
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &287717019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1513,6 @@ GameObject:
   - component: {fileID: 351410570}
   - component: {fileID: 351410573}
   - component: {fileID: 351410572}
-  - component: {fileID: 351410574}
   m_Layer: 5
   m_Name: BlueRectangle
   m_TagString: Untagged
@@ -1595,21 +1578,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351410569}
   m_CullTransparentMesh: 1
---- !u!114 &351410574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351410569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subjectName: "\uD30C"
-  lineWidth: 5
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &357706060
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,7 +3360,7 @@ GameObject:
   - component: {fileID: 769524129}
   - component: {fileID: 769524132}
   - component: {fileID: 769524131}
-  - component: {fileID: 769524130}
+  - component: {fileID: 769524133}
   m_Layer: 5
   m_Name: BigBlueRectangle
   m_TagString: Untagged
@@ -3419,62 +3387,6 @@ RectTransform:
   m_AnchoredPosition: {x: -267.99994, y: -294.99997}
   m_SizeDelta: {x: 178, y: 178}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &769524130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769524128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 769524131}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenuController, Assembly-CSharp
-        m_MethodName: OpenStatsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &769524131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3513,6 +3425,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769524128}
   m_CullTransparentMesh: 1
+--- !u!114 &769524133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769524128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subjectName: "\uD30C"
+  lineWidth: 5
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &784335520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4940,7 +4867,6 @@ GameObject:
   - component: {fileID: 1226823303}
   - component: {fileID: 1226823306}
   - component: {fileID: 1226823305}
-  - component: {fileID: 1226823307}
   m_Layer: 5
   m_Name: PinkRectangle
   m_TagString: Untagged
@@ -5006,21 +4932,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226823302}
   m_CullTransparentMesh: 1
---- !u!114 &1226823307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226823302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subjectName: "\uD551"
-  lineWidth: 5
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1241582973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5213,7 @@ GameObject:
   - component: {fileID: 1274571663}
   - component: {fileID: 1274571666}
   - component: {fileID: 1274571665}
-  - component: {fileID: 1274571664}
+  - component: {fileID: 1274571667}
   m_Layer: 5
   m_Name: BigRedRectangle
   m_TagString: Untagged
@@ -5329,62 +5240,6 @@ RectTransform:
   m_AnchoredPosition: {x: -546.9999, y: -48}
   m_SizeDelta: {x: 178, y: 178}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1274571664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274571662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1274571665}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenuController, Assembly-CSharp
-        m_MethodName: OpenStatsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1274571665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,6 +5278,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274571662}
   m_CullTransparentMesh: 1
+--- !u!114 &1274571667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274571662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subjectName: "\uBE68"
+  lineWidth: 5
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1294192068
 GameObject:
   m_ObjectHideFlags: 0
@@ -8695,7 +8565,7 @@ GameObject:
   - component: {fileID: 2013771920}
   - component: {fileID: 2013771923}
   - component: {fileID: 2013771922}
-  - component: {fileID: 2013771921}
+  - component: {fileID: 2013771924}
   m_Layer: 5
   m_Name: BigPinkRectangle
   m_TagString: Untagged
@@ -8722,62 +8592,6 @@ RectTransform:
   m_AnchoredPosition: {x: 589, y: -226}
   m_SizeDelta: {x: 178, y: 178}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &2013771921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013771919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2013771922}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenuController, Assembly-CSharp
-        m_MethodName: OpenStatsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2013771922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8816,6 +8630,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013771919}
   m_CullTransparentMesh: 1
+--- !u!114 &2013771924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013771919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subjectName: "\uD551"
+  lineWidth: 5
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2018270308
 GameObject:
   m_ObjectHideFlags: 0
@@ -9299,7 +9128,6 @@ GameObject:
   - component: {fileID: 2077560923}
   - component: {fileID: 2077560926}
   - component: {fileID: 2077560925}
-  - component: {fileID: 2077560927}
   m_Layer: 5
   m_Name: RedRectangle
   m_TagString: Untagged
@@ -9365,21 +9193,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077560922}
   m_CullTransparentMesh: 1
---- !u!114 &2077560927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077560922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subjectName: "\uBE68"
-  lineWidth: 5
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2078540576
 GameObject:
   m_ObjectHideFlags: 0
@@ -9655,7 +9468,7 @@ GameObject:
   - component: {fileID: 2118168130}
   - component: {fileID: 2118168133}
   - component: {fileID: 2118168132}
-  - component: {fileID: 2118168131}
+  - component: {fileID: 2118168134}
   m_Layer: 5
   m_Name: BigYellowRectangle
   m_TagString: Untagged
@@ -9682,62 +9495,6 @@ RectTransform:
   m_AnchoredPosition: {x: 383.00012, y: 39.00003}
   m_SizeDelta: {x: 178, y: 178}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &2118168131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118168129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2118168132}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenuController, Assembly-CSharp
-        m_MethodName: OpenStatsPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2118168132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9776,6 +9533,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118168129}
   m_CullTransparentMesh: 1
+--- !u!114 &2118168134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118168129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94df569ed9cd0f438cf11ab444d96e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subjectName: "\uB178"
+  lineWidth: 5
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
