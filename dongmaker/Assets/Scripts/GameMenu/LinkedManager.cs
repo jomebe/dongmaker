@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class LinkedManager : MonoBehaviour
 {
+    [Header("Game Settings")]
+    public GameObject gamePanel;          // 이 게임 모드의 패널 (예: LinkedList)
+
     [Header("UI Settings")]
     public TextMeshProUGUI chanceTextTMP; // TextMeshPro를 사용하는 경우 여기에 연결
     public Text chanceTextLegacy;         // 일반 Text를 사용하는 경우 여기에 연결
     public GameObject correctPanel;       // 정답 시 띄울 패널 (CorrectPanel)
     public GameObject incorrectPanel;     // 기회 소진 시 띄울 패널 (InCorrectPannel)
-    
-    [Header("Game Mode Settings")]
-    public GameObject gameContent;        // 이 게임 모드의 최상위 오브젝트 (예: LinkedList)
     
     private int currentChance = 3;
 
@@ -35,8 +35,8 @@ public class LinkedManager : MonoBehaviour
     // 제출 버튼 클릭 시 호출할 함수
     public void OnSubmit()
     {
-        // 해당 게임 모드 오브젝트가 꺼져있으면 실행하지 않음
-        if (gameContent != null && !gameContent.activeInHierarchy)
+        // 패널이 할당되어 있고, 현재 비활성화 상태라면 로직을 수행하지 않음
+        if (gamePanel != null && !gamePanel.activeInHierarchy)
         {
             return;
         }

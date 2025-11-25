@@ -13,9 +13,6 @@ public class ConnectionLine : MonoBehaviour
     private float lineWidth = 5f;
     private Canvas _canvas;
     
-    // 모든 ConnectionLine이 공유하는 화살표 스프라이트 (최적화)
-    private static Sprite sharedTriangleSprite;
-    
     public void Initialize(RectTransform start, RectTransform end, Color color, float width, bool temporary)
     {
         startTransform = start;
@@ -41,12 +38,8 @@ public class ConnectionLine : MonoBehaviour
         arrowHead.color = color;
         arrowHead.raycastTarget = false;
         
-        // 삼각형 스프라이트 생성 (없을 때만 생성하고 재사용)
-        if (sharedTriangleSprite == null)
-        {
-            sharedTriangleSprite = CreateTriangleSprite();
-        }
-        arrowHead.sprite = sharedTriangleSprite;
+        // 삼각형 스프라이트 생성
+        arrowHead.sprite = CreateTriangleSprite();
         
         UpdateLine();
     }
@@ -166,6 +159,10 @@ public class ConnectionLine : MonoBehaviour
     
     void OnDestroy()
     {
-        // 스프라이트를 공유하므로 여기서 파괴하지 않음
+        if (arrowHead != null && arrowHead.sprite != null)
+        {
+            Destroy(arrowHead.sprite.texture);
+            Destroy(arrowHead.sprite);
+        }
     }
 }
