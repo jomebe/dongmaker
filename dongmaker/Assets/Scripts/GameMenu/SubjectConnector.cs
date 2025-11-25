@@ -206,4 +206,57 @@ public class SubjectConnector : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         }
         connections.Clear();
     }
+
+    private void EnsureLineContainer()
+    {
+        if (lineContainer == null)
+        {
+            Canvas canvas = GetComponentInParent<Canvas>();
+            if (canvas != null)
+            {
+                lineContainer = new GameObject("ConnectionLines");
+                lineContainer.transform.SetParent(canvas.transform, false);
+                
+                // RectTransform 추가
+                RectTransform rect = lineContainer.AddComponent<RectTransform>();
+                rect.anchorMin = Vector2.zero;
+                rect.anchorMax = Vector2.one;
+                rect.sizeDelta = Vector2.zero;
+                rect.anchoredPosition = Vector2.zero;
+                
+                // 순서 조정: CircleListPannel 바로 뒤에 배치 (배경 위, 패널 아래)
+                Transform panel = canvas.transform.Find("CircleListPannel");
+                if (panel != null)
+                {
+                    lineContainer.transform.SetSiblingIndex(panel.GetSiblingIndex());
+                }
+                else
+                {
+                    Transform background = canvas.transform.Find("Background");
+                    if (background == null) background = canvas.transform.Find("BlackBackground");
+                    
+                    if (background != null)
+                    {
+                        lineContainer.transform.SetSiblingIndex(background.GetSiblingIndex() + 1);
+                    }
+                    else
+                    {
+                        lineContainer.transform.SetAsLastSibling();
+                    }
+                }
+                
+                Debug.Log("ConnectionLines 컨테이너 생성됨");
+            }
+        }
+    }
+
+    public static void ClearAllLines()
+    {
+        if (lineContainer != null)
+        {
+            Destroy(lineContainer);
+            lineContainer = null;
+            Debug.Log("모든 연결선이 제거되었습니다.");
+        }
+    }
 }

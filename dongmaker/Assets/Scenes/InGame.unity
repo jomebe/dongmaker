@@ -4421,11 +4421,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f192e78cea7aec44bad91f710613708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentGameType: 0
   gamePanel: {fileID: 0}
   chanceTextTMP: {fileID: 0}
   chanceTextLegacy: {fileID: 1621367388}
   correctPanel: {fileID: 1312430243}
   incorrectPanel: {fileID: 1762815201}
+  desksParent: {fileID: 0}
+  deskSlots: []
+  rowA_Answers:
+  - 
+  - 
+  - 
+  - 
+  - 
+  rowB_Answers:
+  - 
+  - 
+  - 
+  - 
+  - 
+  rowC_Answers:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!4 &723620824
 Transform:
   m_ObjectHideFlags: 0

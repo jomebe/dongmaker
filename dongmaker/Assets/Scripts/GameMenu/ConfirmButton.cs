@@ -35,7 +35,7 @@ public class ConfirmButton : MonoBehaviour
         // 스케줄 저장
         GameManager.Instance.SaveSchedule(p1, p2, p3, p4);
 
-        // Loading 씬으로 이동
-        SceneManager.LoadScene("Loading");
+        // InGame 씬으로 이동
+        SceneManager.LoadScene("InGame");
     }
 }
