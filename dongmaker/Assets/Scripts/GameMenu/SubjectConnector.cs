@@ -132,6 +132,8 @@ public class SubjectConnector : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     
     private void CreateTempLine()
     {
+        EnsureLineContainer();
+
         if (lineContainer == null)
         {
             Debug.LogError("lineContainer가 null입니다!");
