@@ -256,22 +256,32 @@ public class GameEndManager : MonoBehaviour
 
     void ShowCondition()
     {
-        if (conditionText == null || GameManager.Instance == null) return;
+        if (conditionText == null) return;
 
-        // 컨디션에 따라 띄운 사람 표시
-        int condition = GameManager.Instance.condition;
-        
-        if (condition >= 3)
+        // 성공/실패 개수에 따라 메시지 표시
+        // 전부 퍼펙트 or 퍼펙트3개 성공 1개 → "동의 집중력이 오늘따라 좋았다."
+        // 2개 실패 2개 성공 or 3개 실패 1개 성공 → "동이 조금 지쳐 보인다."
+        // 다 실패 → "스트레스가 조금 오른 것 같다."
+
+        if (failCount == 0)
         {
-            conditionText.text = "띄운 사람\n큐비, 짹짹, 동";
+            // 전부 퍼펙트 (4성공 0실패)
+            conditionText.text = "\"동의 집중력이 오늘따라 좋았다.\"";
         }
-        else if (condition >= 2)
+        else if (failCount == 1 && successCount >= 3)
         {
-            conditionText.text = "띄운 사람\n큐비, 짹짹";
+            // 3성공 1실패
+            conditionText.text = "\"동의 집중력이 오늘따라 좋았다.\"";
+        }
+        else if (failCount == 4)
+        {
+            // 다 실패 (0성공 4실패)
+            conditionText.text = "\"스트레스가 조금 오른 것 같다.\"";
         }
         else
         {
-            conditionText.text = "띄운 사람\n큐비";
+            // 2실패 2성공 or 3실패 1성공
+            conditionText.text = "\"동이 조금 지쳐 보인다.\"";
         }
     }
 
