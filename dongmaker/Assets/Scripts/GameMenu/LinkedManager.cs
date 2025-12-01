@@ -244,8 +244,9 @@ public class LinkedManager : MonoBehaviour
     public void CheckSequence(List<SubjectConnection> connections)
     {
         bool redToYellow = false;
-        bool yellowToBlue = false;
-        bool blueToPink = false;
+        bool yellowToPink = false;
+        bool pinkToBlue = false;
+        bool blueToRed = false;
 
         foreach (var conn in connections)
         {
@@ -258,20 +259,26 @@ public class LinkedManager : MonoBehaviour
             
             if (isRedFrom && isYellowTo) redToYellow = true;
 
-            // Yellow -> Blue (노랑 -> 파랑)
+            // Yellow -> Pink (노랑 -> 핑크/분홍)
             bool isYellowFrom = from.Contains("Yellow") || from.Contains("노");
-            bool isBlueTo = to.Contains("Blue") || to.Contains("파");
-            
-            if (isYellowFrom && isBlueTo) yellowToBlue = true;
-
-            // Blue -> Pink (파랑 -> 핑크/분홍)
-            bool isBlueFrom = from.Contains("Blue") || from.Contains("파");
             bool isPinkTo = to.Contains("Pink") || to.Contains("핑") || to.Contains("분");
             
-            if (isBlueFrom && isPinkTo) blueToPink = true;
+            if (isYellowFrom && isPinkTo) yellowToPink = true;
+
+            // Pink -> Blue (핑크/분홍 -> 파랑)
+            bool isPinkFrom = from.Contains("Pink") || from.Contains("핑") || from.Contains("분");
+            bool isBlueTo = to.Contains("Blue") || to.Contains("파");
+            
+            if (isPinkFrom && isBlueTo) pinkToBlue = true;
+
+            // Blue -> Red (파랑 -> 빨강) - 원형 연결 추가
+            bool isBlueFrom = from.Contains("Blue") || from.Contains("파");
+            bool isRedTo = to.Contains("Red") || to.Contains("빨");
+
+            if (isBlueFrom && isRedTo) blueToRed = true;
         }
 
-        if (redToYellow && yellowToBlue && blueToPink)
+        if (redToYellow && yellowToPink && pinkToBlue && blueToRed)
         {
             Debug.Log("정확함");
             if (correctPanel != null) correctPanel.SetActive(true);
