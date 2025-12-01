@@ -18,8 +18,7 @@ public class LinkedManager : MonoBehaviour
     [Header("UI Settings")]
     public TextMeshProUGUI chanceTextTMP; // TextMeshPro를 사용하는 경우 여기에 연결
     public Text chanceTextLegacy;         // 일반 Text를 사용하는 경우 여기에 연결
-    public GameObject correctPanel;       // 정답 시 띄울 패널 (CorrectPanel)
-    public GameObject incorrectPanel;     // 기회 소진 시 띄울 패널 (InCorrectPannel)
+    // correctPanel과 incorrectPanel은 이제 사용하지 않음 (StatsPanel로 대체)
     
     [Header("Array Game Settings")]
     public Transform desksParent; // Desks 부모 오브젝트를 여기에 연결하면 슬롯을 자동으로 찾습니다.
@@ -34,10 +33,6 @@ public class LinkedManager : MonoBehaviour
     void Start()
     {
         UpdateChanceUI();
-        
-        // 시작할 때 패널들이 켜져있다면 끄기
-        if (correctPanel != null) correctPanel.SetActive(false);
-        if (incorrectPanel != null) incorrectPanel.SetActive(false);
 
         // [자동 감지] ArrayPannel이 씬에 있고 활성화되어 있다면 Array 모드로 자동 전환
         GameObject arrayPanelObj = GameObject.Find("ArrayPannel");
@@ -115,9 +110,6 @@ public class LinkedManager : MonoBehaviour
         currentChance = 3;
         UpdateChanceUI();
         
-        if (correctPanel != null) correctPanel.SetActive(false);
-        if (incorrectPanel != null) incorrectPanel.SetActive(false);
-        
         InitGameLogic();
     }
 
@@ -161,7 +153,6 @@ public class LinkedManager : MonoBehaviour
             if (CheckArrayAnswer())
             {
                 Debug.Log("정확함");
-                if (correctPanel != null) correctPanel.SetActive(true);
                 
                 // 게임 클리어 알림
                 if (InGameFlowManager.Instance != null)
@@ -274,7 +265,6 @@ public class LinkedManager : MonoBehaviour
         if (redToYellow && yellowToBlue && blueToPink)
         {
             Debug.Log("정확함");
-            if (correctPanel != null) correctPanel.SetActive(true);
             
             // 게임 클리어 알림
             if (InGameFlowManager.Instance != null)
@@ -299,7 +289,11 @@ public class LinkedManager : MonoBehaviour
             if (currentChance <= 0)
             {
                 Debug.Log("기회를 모두 소진했습니다.");
-                if (incorrectPanel != null) incorrectPanel.SetActive(true);
+                // 실패 처리 - StatsPanel로 표시
+                if (InGameFlowManager.Instance != null)
+                {
+                    InGameFlowManager.Instance.OnGameFinished(false);
+                }
             }
         }
     }
